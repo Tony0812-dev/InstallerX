@@ -1,14 +1,6 @@
 <resources>
     <string name="app_name">InstallerX</string>
 
-    <string name="agreement_title">温馨提示</string>
-    <string name="agreement_text">根据相关政策规定，您需要先阅读并同意&lt;a href=&quot;https://iamr0s.github.io/InstallerXDocs/terms&quot;&gt;《用户条款》&lt;/a&gt;与&lt;a href=&quot;https://iamr0s.github.io/InstallerXDocs/privacy&quot;&gt;《隐私政策》&lt;/a&gt;后才能开始使用本软件。\n同意后不再弹出此提示，可通过设置页点击链接可再次查看相关文件内容。</string>
-
-    <string name="user_terms">用户条款</string>
-    <string name="privacy_policy">隐私政策</string>
-
-    <string name="agree">同意</string>
-
     <string name="back">返回</string>
     <string name="home">主页</string>
     <string name="config">配置</string>
@@ -23,17 +15,6 @@
     <string name="system_version">系统版本</string>
     <string name="device_name">手机型号</string>
     <string name="system_struct">系统架构</string>
-
-    <string name="donate">捐赠</string>
-    <string name="alipay">支付宝</string>
-    <string name="wechat">微信</string>
-    <string name="binance">币安</string>
-
-    <string name="discuss">讨论 &amp; 反馈 &amp; 更新</string>
-    <string name="qq_channel">QQ频道</string>
-    <string name="qq_group_official">QQ群组（官方）</string>
-    <string name="qq_group_1">QQ群组（第三方交流群）</string>
-    <string name="telegram_group">Telegram群组</string>
 
     <string name="basic">常规</string>
     <string name="lock_default_installer">锁定为默认安装器</string>

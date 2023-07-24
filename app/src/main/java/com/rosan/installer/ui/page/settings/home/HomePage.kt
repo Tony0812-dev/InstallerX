@@ -49,12 +49,6 @@ fun HomePage(navController: NavController) {
 //            item {
 //                InfoWidget()
 //            }
-            item {
-                DonateWidget()
-            }
-            item {
-                DiscussWidget()
-            }
         }
     }
 }
@@ -144,85 +138,6 @@ fun openUrl(context: Context, url: String) {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     context.startActivity(intent)
-}
-
-@Composable
-fun DonateWidget() {
-    val context = LocalContext.current
-
-    val items = listOf(
-        HomeCardItem(
-            label = stringResource(id = R.string.alipay),
-            onClick = {
-                openUrl(context, "https://qr.alipay.com/fkx18580lfpydiop04dze47")
-            }
-        ),
-        HomeCardItem(
-            label = stringResource(id = R.string.wechat),
-            onClick = {
-                openUrl(context, "https://missuo.ru/file/fee5df1381671c996b127.png")
-            }
-        ),
-        HomeCardItem(
-            label = stringResource(id = R.string.binance),
-            onClick = {
-                openUrl(context, "https://missuo.ru/file/28368c28d4ff28d59ed4b.jpg")
-            }
-        ),
-    )
-    ItemsCardWidget(
-        title = {
-            Text(text = stringResource(id = R.string.donate))
-        },
-        items = items
-    )
-}
-
-@Composable
-fun DiscussWidget() {
-    val context = LocalContext.current
-
-    val items = listOf(
-        HomeCardItem(
-            label = stringResource(id = R.string.qq_channel),
-            onClick = {
-                openUrl(
-                    context,
-                    "https://pd.qq.com/s/nx7jpup8"
-                )
-            }
-        ),
-        HomeCardItem(
-            label = stringResource(id = R.string.qq_group_official),
-            onClick = {
-                openUrl(
-                    context,
-                    "https://qm.qq.com/cgi-bin/qm/qr?k=YMyAigxnns_FkISlRaormMiApHr2RmU7&jump_from=webapi&qr=1"
-                )
-            }
-        ),
-        HomeCardItem(
-            label = stringResource(id = R.string.qq_group_1),
-            onClick = {
-                openUrl(
-                    context,
-                    "https://qm.qq.com/cgi-bin/qm/qr?k=Xf40z0xnN-9zVnucuErSySLB32oN_IVV&jump_from=webapi&qr=1"
-                )
-            }
-        ),
-        HomeCardItem(
-            label = stringResource(id = R.string.telegram_group),
-            onClick = {
-                openUrl(context, "https://t.me/rosan_installer")
-            }
-        ),
-    )
-    ItemsCardWidget(
-        title = {
-            Text(text = stringResource(id = R.string.discuss))
-        },
-        items = items
-    )
 }
 
 @Composable

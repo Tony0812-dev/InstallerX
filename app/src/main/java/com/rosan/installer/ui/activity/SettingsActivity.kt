@@ -33,51 +33,10 @@ class SettingsActivity : ComponentActivity(), KoinComponent {
                         .fillMaxSize()
                         .imePadding()
                 ) {
-                    AgreementDialog()
                     SettingsPage()
                 }
             }
         }
     }
 
-    @Composable
-    private fun AgreementDialog() {
-        val preferences = LocalContext.current.getSharedPreferences("app", Context.MODE_PRIVATE)
-        var agreed by remember {
-            mutableStateOf(preferences.getBoolean("agreement", false))
-        }
-        preferences.edit {
-            putBoolean("agreement", agreed)
-            commit()
-        }
-        if (agreed) return
-
-        AlertDialog(onDismissRequest = { }, title = {
-            Text(text = stringResource(id = R.string.agreement_title))
-        }, text = {
-            val textColor = AlertDialogDefaults.textContentColor.toArgb()
-            AndroidView(factory = {
-                TextView(it).apply {
-                    setTextColor(textColor)
-                    movementMethod = LinkMovementMethod.getInstance()
-                    text = HtmlCompat.fromHtml(
-                        context.getString(R.string.agreement_text),
-                        HtmlCompat.FROM_HTML_MODE_COMPACT
-                    )
-                }
-            })
-        }, dismissButton = {
-            TextButton(onClick = {
-                this@SettingsActivity.finish()
-            }) {
-                Text(text = stringResource(id = R.string.cancel))
-            }
-        }, confirmButton = {
-            TextButton(onClick = {
-                agreed = true
-            }) {
-                Text(text = stringResource(id = R.string.agree))
-            }
-        })
-    }
 }
