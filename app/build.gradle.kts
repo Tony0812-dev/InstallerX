@@ -9,7 +9,6 @@ plugins {
     id("kotlinx-serialization")
 }
 
-@Suppress("UnstableApiUsage")
 android {
     compileSdk = 33
 
@@ -39,29 +38,8 @@ android {
         }
     }
 
-    signingConfigs {
-        getByName("debug") {
-            keyAlias = keystoreProps.getProperty("keyAlias")
-            keyPassword = keystoreProps.getProperty("keyPassword")
-            storeFile = file(keystoreProps.getProperty("storeFile"))
-            storePassword = keystoreProps.getProperty("storePassword")
-            enableV1Signing = true
-            enableV2Signing = true
-        }
-
-        create("release") {
-            keyAlias = keystoreProps.getProperty("keyAlias")
-            keyPassword = keystoreProps.getProperty("keyPassword")
-            storeFile = file(keystoreProps.getProperty("storeFile"))
-            storePassword = keystoreProps.getProperty("storePassword")
-            enableV1Signing = true
-            enableV2Signing = true
-        }
-    }
-
     buildTypes {
         getByName("debug") {
-            signingConfig = signingConfigs.getByName("debug")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -70,7 +48,6 @@ android {
         }
 
         getByName("release") {
-            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
