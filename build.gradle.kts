@@ -12,6 +12,3 @@ plugins {
 tasks.register("Delete", Delete::class) {
     delete(rootProject.buildDir)
 }
-tasks.register<Wrapper>("wrapper") {
-        gradleVersion = "8.1.1"
-}
