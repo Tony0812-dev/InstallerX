@@ -22,4 +22,4 @@ jobs:
     - name: Upload app
       uses: actions/upload-artifact@v3
       with:
-        path: ./
+        path: app/build/outputs
