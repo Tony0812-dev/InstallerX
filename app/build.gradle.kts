@@ -9,10 +9,6 @@ plugins {
     id("kotlinx-serialization")
 }
 
-val keystoreProps = Properties().apply {
-    load(FileInputStream(rootProject.file("keystore/r0s.properties")))
-}
-
 @Suppress("UnstableApiUsage")
 android {
     compileSdk = 33
